@@ -1,0 +1,12 @@
+*~
+.DS_Store
+
+# 設定系のファイル
+node_modules
+package-lock.json
+production/build.js.LICENSE.txt
+dist/js/module/build.js.LICENSE.txt
+
+# メモ書きやアプリケーション用ファイル
+ReadMe.txt
+*.ai
