@@ -1,0 +1,83 @@
+@charset "UTF-8";
+#header {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+}
+#header .header-area {
+  position: fixed;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 2;
+  color: #fff;
+  text-align: center;
+}
+#header .header-area p {
+  font-size: 1.3vw;
+  letter-spacing: 0.4em;
+  margin: 0 0 20px 0;
+}
+#header .header-area h1 {
+  display: block;
+  font-size: 6vw;
+  font-weight: normal;
+  line-height: 1;
+  letter-spacing: 0;
+  padding: 0 10px;
+}
+#header .header-area .glow-anime span {
+  opacity: 0;
+}
+#header .header-area .glow-anime.glow span {
+  animation: GlowAnimeOn 1s ease-out forwards;
+}
+#header .scrolldown2 {
+  position: fixed;
+  bottom: 10px;
+  left: 50%;
+  z-index: 2;
+}
+#header .scrolldown2 span {
+  position: absolute;
+  left: 10px;
+  bottom: 10px;
+  color: #eee;
+  font-size: 0.7rem;
+  letter-spacing: 0.05em;
+  -ms-writing-mode: tb-rl;
+  -webkit-writing-mode: vertical-rl;
+  writing-mode: vertical-rl;
+}
+#header .scrolldown2:before {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: -4px;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: #eee;
+  /* 丸の動き。1.6秒かけて透過して永遠にループ */
+  animation: CircleMove 1.6s ease-in-out infinite, CirleMoveHide 1.6s ease-out infinite;
+}
+#header .scrolldown2:after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 2px;
+  height: 50px;
+  background: #eee;
+}
+#header #header-img {
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  width: 100%;
+  height: 100vh;
+  background: url(../img/main.jpg) no-repeat top center;
+  background-size: cover;
+  transform-origin: center;
+}

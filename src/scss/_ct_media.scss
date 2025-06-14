@@ -1,0 +1,231 @@
+#container
+{
+
+    /* 768px以下の幅の場合 */
+    @media screen and (max-width: 768px)
+    {
+
+        .btn04
+        {
+            width: 250px;
+        }
+
+        #lead
+        {
+            flex-direction: column-reverse;
+
+            .btn04
+            {
+                padding: 10px 30px;
+            }
+
+            .lead-img
+            {
+                min-height: 250px;
+                width: 100% !important;
+            }
+
+            .lead-area
+            {
+                margin: 0 0 140px 0;
+                min-height: 20em;
+                justify-content: center;
+                width: 100% !important;
+
+                h2
+                {
+                    width: auto;
+                    margin: 0 0 0 20px;
+                    line-height: 2.2 !important;
+                }
+
+                p
+                {
+                    width: auto;
+                    line-height: 2 !important;
+                }
+
+                .lead-btn
+                {
+                    width: 100%;
+                    top: 50px;
+                    text-align: center;
+
+                    a
+                    {
+                        writing-mode: horizontal-tb;
+                    }
+                }
+            }
+
+            #lead-img
+            {
+                min-height: 250px;
+            }
+
+            .blog-area
+            {
+                margin: 0 0 140px 0;
+                min-height: 20em;
+                justify-content: center;
+            }
+        }
+
+        #menu
+        {
+            h2
+            {
+                font-size: 3rem !important;
+            }
+        }
+
+        #contact
+        {
+            .contact-img
+            {
+                width: 48% !important;
+            }
+
+            .contact-area
+            {
+                width: 48% !important;
+            }
+        }
+
+        #blog
+        {
+            h2
+            {
+                font-size: 3rem !important;
+            }
+        }
+
+        .blog-area
+        {
+            article:nth-of-type(1)
+            {
+                width: 100% !important;
+            }
+
+            .blog-block article:nth-of-type(n + 1)
+            {
+                animation-delay: .5s;
+            }
+        }
+
+
+    }
+
+    /* 1300px以下の幅の場合 */
+    @media screen and (max-width: 1300px)
+    {
+        #lead
+        {
+            .lead-area
+            {
+                h2
+                {
+                    line-height: 2;
+                }
+
+                p
+                {
+                    line-height: 2.3;
+                }
+            }
+        }
+    }
+
+    /* 1060px以下の幅の場合 */
+    @media screen and (max-width: 1060px)
+    {
+        #lead
+        {
+            .lead-img
+            {
+                width: 30%;
+            }
+
+            .lead-area
+            {
+                width: 68%;
+            }
+        }
+    }
+
+
+    @media screen and (max-width: 1300px)
+    {
+        /* 1300px以下の幅はこちらを最優先とする */
+        .blog-area .blog-block article:nth-of-type(n+1)
+        {
+            width: 48% !important;
+        }
+    }
+
+    @media screen and (max-width: 940px)
+    {
+        .inner
+        {
+            padding: 30px;
+        }
+    }
+
+    @media screen and (max-width: 820px)
+    {
+        .blog-area article:nth-of-type(1)
+        {
+            width: 50%;
+            margin: 0 auto 3vh auto;
+
+            img
+            {
+                width: 100% !important;
+                height: auto !important;
+            }
+        }
+
+        .blog-area .blog-block article:nth-of-type(1)
+        {
+            margin: 0 0 3vh 0;
+        }
+
+        .blog-area .blog-block
+        {
+            width: 100% !important;
+        }
+
+        .blog-area .blog-block article:nth-of-type(1) img
+        {
+            width: auto !important;
+            height: 32vh !important;
+        }
+    }
+
+    @media screen and (max-width: 450px)
+    {
+        .blog-area .blog-block article:nth-of-type(n + 1)
+        {
+            width: 100%;
+            animation-delay: 0s !important;
+        }
+
+        .blog-area img,
+        .blog-area .blog-block article:nth-of-type(1) img
+        {
+            width: 100%;
+            height: auto;
+        }
+
+        .blog-area h3
+        {
+            font-size:0.9rem;
+        }
+
+        .blog-area p
+        {
+            display: none;
+        }
+    }
+
+}

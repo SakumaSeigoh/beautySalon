@@ -1,0 +1,18 @@
+#header
+{
+
+    @media screen and (max-width: 960px)
+    {
+        /* メディアクエリ側の設定を優先する */
+        .header-area h1
+        {
+            font-size: 4rem !important;
+        }
+
+        .header-area p
+        {
+            font-size: 0.8rem !important;
+        }
+    }
+
+}

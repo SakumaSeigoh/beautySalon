@@ -1,0 +1,243 @@
+doctype html
+html(lang='ja')
+    head
+        meta(charset='UTF-8')
+        meta(name='viewport', content='width=device-width, initial-scale=1.0')
+        meta(name='robots', content='nodindex, nofollow')
+        meta(http-equiv='X-UA-Compatible', content='IE=Edge, chrome=1')
+        meta(name='description', content='女性向けサロンポートフォリオサイト')
+        title Beauty Salon Beautiful Days
+        link(href='https://fonts.googleapis.com/css?family=Noto+Serif+JP%7CParisienne&amp;display=swap', rel='stylesheet')
+        link(rel='stylesheet', content='text/plain', href='https://unpkg.com/ress/dist/ress.min.css')
+        link(rel='stylesheet', href='./css/layout.css')
+        script(type='text/javascript', src='./js/module/build.js')
+
+    body
+        div#splash
+            div#splash-logo
+                p
+                    span.slide-in.slide-anime-left-right
+                        span.slide-in_inner.slide-anime-right-left Beautiful Days
+
+        div.splash-bg1
+        div.splash-bg2
+
+        div#wrapper
+
+            include ./header.pug
+
+            div.openbtn
+                span
+                span
+
+            nav#g-nav
+                div#g-nav-list
+                    ul
+                        li: p
+                            span.glow-anime Beautiful Days
+                        li.blur-trigger: a(href='#') TOP
+                        li.blur-trigger: a(href='#') About
+                        li.blur-trigger: a(href='#') Service
+                        li.blur-trigger: a(href='#') Contact
+                        li.blur-trigger: a(href='#') Blog
+
+            main#container
+                article#lead.inner.zoom-out-trigger
+                    div.lead-img.fade-in-trigger
+                    div.lead-area.fade-in-trigger
+                        h2
+                            | 白金台にある
+                            br
+                            | 癒しの
+                            br
+                            | プライベート空間
+                        p
+                            | エステサロン
+                            br
+                            | ビューティフルデイズは
+                            br
+                            | 頑張るあなたが
+                            br
+                            | ちょっと疲れた時に
+                            br
+                            | 気軽に立ち寄れる
+                            br
+                            | 癒すの時間を
+                            br
+                            | ご提供いたします。
+                        div.lead-btn
+                            a.btn04.bordertop(href='#')
+                                span お店のご紹介
+
+                section#menu
+                    h2
+                        span.slide-in.left-anime.slide-anime-left-right
+                            span.slide-in_inner.left-anime-inner.slide-anime-right-left Menu
+                    ul.slider
+                        li
+                            section.fade-in-trigger
+                                a(href='#')
+                                    figure.circle
+                                        span.mask
+                                            img(src='./img/img_01.jpg', alt='ハンドケア／フットケア')
+                                    div.menu-area
+                                        h3 ハンドケア / フットケア
+                                        p 3,000 yen ~
+                        li
+                            section.fade-in-trigger
+                                a(href='#')
+                                    figure.circle
+                                        span.mask
+                                            img(src='./img/img_02.jpg', alt='ウエディングメニュー')
+                                    div.menu-area
+                                        h3 ウエディングメニュー
+                                        p 12,000 yen ~
+                        li
+                            section.fade-in-trigger
+                                a(href='#')
+                                    figure.circle
+                                        span.mask
+                                            img(src='./img/img_03.jpg', alt='ボディトリートメント')
+                                    div.menu-area
+                                        h3 ボディトリートメント
+                                        p 8,000 yen ~
+                        li
+                            section.fade-in-trigger
+                                a(href='#')
+                                    figure.circle
+                                        span.mask
+                                            img(src='./img/img_04.jpg', alt='フェイシャル')
+                                    div.menu-area
+                                        h3 フェイシャル
+                                        p 5,000 yen ~
+                        li
+                            section.fade-in-trigger
+                                a(href='#')
+                                    figure.circle
+                                        span.mask
+                                            img(src='./img/img_05.jpg', alt='メイク／セット')
+                                    div.menu-area
+                                        h3 メイク / セット
+                                        p 3,000 yen ~
+
+
+                    div.menu-btn.fade-in-trigger
+                        a.btn04.bordertop(href='#')
+                            span メニュー一覧を見る
+
+                section#contact.inner
+                    div.contact-img.fade-in-trigger
+                    div.contact-area.fade-in-trigger
+                        h2 ご予約方法
+                        dl
+                            dt
+                                a(href='tel:03-1111-0000') TEL：03-1111-0000
+                            dd (営業時間：10:00〜20:00)
+                        div.contact-btn
+                            a.btn04.bordertop(href='#')
+                                span お問い合わせ
+
+                article#blog.inner
+                    h2
+                        span.slide-in.left-anime.slide-anime-left-right
+                            span.slide-in_inner.left-anime-inner.slide-anime-right-left Blog
+
+                    div.blog-area
+                        article.main-catch.fade-in-trigger
+                            a.bg-du(href='#')
+                                figure.mask
+                                    img(src='./img/main-cosme.jpg', alt='MainCatch')
+                                    time(datetime='2022.10.15') 2022.10.15
+                                div.cap
+                                    time(datetime='2022.10.15') 2022.10.15
+                                    h3 お得なキャンペーンを実施中！
+                                    p
+                                        | 2022年秋限定コスメキャンペーンがスタートしました！
+                                    span Read More
+
+                        div.blog-block
+                            article.fade-in-trigger
+                                a.bg-du(href='#')
+                                    figure.mask
+                                        img(src='./img/plant-ingredient.jpg', alt='植物由来成分')
+                                        time(datetime='2022.10.08') 2022.10.08
+                                    div.cap
+                                        h3 植物由来について
+                                        span Read More
+
+                            article.fade-in-trigger
+                                a.bg-du(href='#')
+                                    figure.mask
+                                        img(src='./img/marine-ingredient.jpg', alt='海洋由来成分')
+                                        time(datetime='2022.10.01') 2022.10.01
+                                    div.cap
+                                        h3 海洋由来について
+                                        span Read More
+
+                            article.fade-in-trigger
+                                a.bg-du(href='#')
+                                    figure.mask
+                                        img(src='./img/autumn-care.jpg', alt='秋の肌ケア')
+                                        time(datetime='2022.09.13') 2022.09.13
+                                    div.cap
+                                        h3 秋のナイトケア特集
+                                        span Read More
+
+                            article.fade-in-trigger
+                                a.bg-du(href='#')
+                                    figure.mask
+                                        img(src='./img/shop-sweets.jpg', alt='秋のサービススイーツ')
+                                        time(datetime='2022.09.01') 2022.09.01
+                                    div.cap
+                                        h3 サービス新作スイーツ
+                                        span Read More
+
+                            article.fade-in-trigger
+                                a.bg-du(href='#')
+                                    figure.mask
+                                        img(src='./img/shop-product.jpg', alt='新作商品')
+                                        time(datetime='2022.08.22') 2022.08.22
+                                    div.cap
+                                        h3 新作商品！
+                                        span Read More
+
+                            article.fade-in-trigger
+                                a.bg-du(href='#')
+                                    figure.mask
+                                        img(src='./img/staff-blog.jpg', alt='スタッフブログ')
+                                        time(datetime='2022.08.08') 2022.08.08
+                                    div.cap
+                                        h3 当店スタッフブログ
+                                        span Read More
+
+            footer#footer.inner
+                dl
+                    dt
+                        span.slide-in.left-anime.slide-anime-left-right
+                            span.slide-in_inner.left-anime-inner.slide-anime-right-left 白金台の癒しのエステサロン
+                    dd
+                        span.slide-in.left-anime.slide-anime-left-right
+                            span.slide-in_inner.left-anime-inner.slide-anime-right-left Beautiful Days
+
+                div.footer-list
+                    div.slide-in.left-anime.slide-anime-left-right
+                        div.slide-in_inner.left-anime-inner.slide-anime-right-left
+                            ul
+                                li
+                                    a(href='#') Top
+                                li
+                                    a(href='#') About
+                                li
+                                    a(href='#') Menu
+                                li
+                                    a(href='#') Contact
+                                li
+                                    a(href='#') Blog
+
+                p#page-top
+                    a(href='#')
+                        span
+
+                small
+                    span.slide-in.left-anime.slide-anime-left-right
+                        span.slide-in_inner.left-anime-inner.slide-anime-right-left &copy; Beautiful Days

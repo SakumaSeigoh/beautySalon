@@ -1,0 +1,539 @@
+@import "base";
+@import "common";
+@import "hd_media";
+@import "ct_media";
+@import "ft_media";
+@import "key_frames";
+
+@import "slick";
+@import "slickTheme";
+
+@import "header";
+@import "footer";
+@import "nav";
+
+body
+{
+    background: #e2a2b1;
+    font-family: 'Noto Serif JP', serif;
+    color: #555;
+    font-size: 1rem;
+    line-height: 1.85;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    -webkit-text-size-adjust: 100%;
+    word-wrap: break-word;
+    letter-spacing: 0.2em;
+}
+
+body.appear
+{
+    /* 画面を開いた後の背景色を指定 */
+    background: #f8f9fa;
+
+    /* bodyにappearクラスがついたら出現 */
+    .splash-bg1,
+    .splash-bg2
+    {
+        display: block;
+    }
+
+    /* 右に消えるエリア */
+    .splash-bg1
+    {
+        animation-name: PageAnimeFadeRight;
+        animation-duration: 1.2s;
+        animation-timing-function: ease-in-out;
+        animation-fill-mode: forwards;
+        content: "";
+        position: fixed;
+        z-index: 999;
+        width: 100%;
+        height: 100vh;
+        top: 0;
+        left: 50%;
+        transform: scaleX(1);
+        /* 伸びる背景色の設定 */
+        background-color: #e2a2b1;
+    }
+
+    /* 左に消えるエリア */
+    .splash-bg2
+    {
+        animation-name: PageAnimeFadeLeft;
+        animation-duration: 1.2s;
+        animation-timing-function: ease-in-out;
+        animation-fill-mode: forwards;
+        content: "";
+        position: fixed;
+        z-index: 999;
+        width: 100%;
+        height: 100vh;
+        top: 0;
+        right: 50%;
+        transform: scaleX(1);
+        /* 伸びる背景色の設定 */
+        background-color: #e2a2b1;
+    }
+
+    /* bodyにappearクラスがついたら出現 */
+    #wrapper
+    {
+        animation-name: PageAnimeAppear;
+        animation-duration: 1s;
+        animation-delay: 0.2s;
+        animation-fill-mode: forwards;
+        opacity: 0;
+    }
+}
+
+#splash
+{
+    /* fixedで全面に固定 */
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    z-index: 99999;
+    background: #e2a2b1;
+    text-align: center;
+    color: #fff;
+}
+
+.inner
+{
+    width: 100%;
+    margin: 0 auto;
+    padding: 70px;
+}
+
+/* 画面遷移アニメーション */
+.splash-bg1,
+.splash-bg2
+{
+    display: none;
+}
+
+/* Loading画像中央配置 */
+#splash-logo
+{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+    p
+    {
+        font-size: 1.8rem;
+        font-weight: normal;
+        white-space: nowrap;
+    }
+}
+
+#container
+{
+    overflow-x: hidden;
+
+    a:not(.btn04)
+    {
+        color: #555;
+        text-decoration: none;
+        outline: none;
+    }
+
+    #lead
+    {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        padding-top: 140px;
+    }
+
+    .lead-img
+    {
+        width: 46%;
+        min-height: 400px;
+        background: url(../img/lead.jpg) no-repeat center;
+        background-size: cover;
+    }
+
+    .lead-area
+    {
+        width: 52%;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-around;
+        flex-direction: row-reverse;
+
+        h2
+        {
+            width: 28%;
+            line-height: 2.5;
+            font-size: 1.4rem;
+        }
+
+        p
+        {
+            width: 48%;
+            padding: 50px 0 0 0;
+            line-height: 2.8;
+        }
+
+        .btn04
+        {
+            padding: 20px 15px;
+        }
+
+        .lead-btn
+        {
+            width: 10%;
+            position: relative;
+            top: 240px;
+        }
+
+        h2,
+        p,
+        .lead-btn a
+        {
+            -ms-writing-mode: tb-rl;
+            -webkit-writing-mode: vertical-rl;
+            writing-mode: vertical-rl;
+            text-orientation: upright;
+        }
+    }
+
+    #menu
+    {
+        padding: 70px 0;
+
+        h2
+        {
+            font-size: 4rem;
+            text-align: center;
+            margin: 0 0 50px 0;
+            font-weight: normal;
+            color: #e2a2b1;
+        }
+
+        section
+        {
+            background: #fff;
+            margin: 0 0 10px 0;
+
+            a
+            {
+                color: #555;
+                text-decoration: none;
+                outline: none;
+            }
+
+            h3
+            {
+                font-size: 0.9em;
+                margin: 0 0 10px 0;
+            }
+
+            p
+            {
+                font-size: 0.8em;
+            }
+        }
+
+
+        .slider
+        {
+            width: 94%;
+            margin: 0 auto;
+
+            img
+            {
+                width: 100%;
+                height: auto;
+            }
+
+            .slick-slide
+            {
+                margin: 0 10px;
+            }
+        }
+
+        /* 戻る、次へ矢印の位置 */
+        .slick-prev,
+        .slick-next
+        {
+            position: absolute;
+            top: 42%;
+            cursor: pointer;
+            outline: none;
+            border-top: 2px solid #999;
+            border-right: 2px solid #999;
+            height: 15px;
+            width: 15px;
+        }
+
+        /* 戻る矢印の位置と形状 */
+        .slick-prev
+        {
+            left: -1.5%;
+            transform: rotate(-135deg);
+        }
+
+        /* 次へ矢印の位置と形状 */
+        .slick-next
+        {
+            right: -1.5%;
+            transform: rotate(45deg);
+        }
+
+        /* ドットナビゲーションの設定 */
+
+        .slick-dots
+        {
+            text-align: center;
+            margin: 20px 0 0 0;
+
+            li
+            {
+                display: inline-block;
+                margin: 0 5px;
+            }
+
+            button
+            {
+                color: transparent;
+                outline: none;
+                width: 8px;
+                height: 8px;
+                display: block;
+                border-radius: 50%;
+                background: #ccc;
+            }
+
+            .slick-active button
+            {
+                background: #e2a2b1;
+            }
+        }
+
+        .menu-btn
+        {
+            text-align: center;
+            margin: 50px 0 0 0;
+        }
+
+        .menu-area
+        {
+            padding: 20px;
+            box-shadow: 5px 0 10px #ccc;
+        }
+
+        /*==================================================
+        画像リンクの動き
+        ===================================*/
+
+        span.mask
+        {
+            display: block;   /*画像をくくるspanタグをブロック要素にする*/
+            overflow: hidden; /*はみ出ているものを隠す*/
+        }
+
+        /*　7-9 波紋　*/
+
+        /*波紋の基点となる位置を定義*/
+        .circle span.mask
+        {
+            position: relative;
+        }
+
+        .circle span.mask::before
+        {
+            position: absolute;
+            content: '';
+            transform: scale(0);    /*円の大きさ初期値は0*/
+            opacity: 0;             /*透過0*/
+            width: 100%;            /*円のサイズ指定*/
+            height: 100%;           /*円のサイズ指定*/
+            border-radius: 50%;     /*円の角丸指定*/
+            background: rgba(255, 255, 255, 0.2);
+        }
+
+        .circle span.mask:hover::before
+        {
+            animation: circle 0.75s;
+        }
+    }
+
+    #contact
+    {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: space-between;
+        flex-direction: row-reverse;
+
+        .contact-img
+        {
+            width: 70%;
+            min-height: 300px;
+            background: url(../img/contact.jpg) no-repeat center;
+            background-size: cover;
+        }
+
+        .contact-area
+        {
+            width: 25%;
+            text-align: center;
+
+            h2
+            {
+                font-size: 1.3rem;
+                margin: 0 0 10px 0;
+            }
+
+            dt
+            {
+                font-size: 1.2rem;
+                margin: 0 0 10px 0;
+            }
+
+            dd
+            {
+                font-size: 0.8rem;
+                margin: 0 0 30px 0;
+            }
+        }
+    }
+
+    #blog
+    {
+        margin: 0 0 50px 0;
+
+        h2
+        {
+            font-size: 4rem;
+            text-align: center;
+            margin: 0 0 50px 0;
+            font-weight: normal;
+            color: #e2a2b1;
+        }
+
+        .blog-area
+        {
+            display: flex;
+            justify-content: space-between;
+            text-align: center;
+            flex-wrap: wrap;
+            overflow: hidden;
+
+            .main-catch
+            {
+                width: 30%;
+
+                img
+                {
+                    height: 67vh;
+                }
+            }
+
+            figure time
+            {
+                position: absolute;
+                bottom: 0;
+                left: 0;
+                background: rgba(226, 162, 178, 0.8);
+                display: block;
+                width: 100%;
+                padding: 7px;
+                color: #fff;
+            }
+
+            time
+            {
+                font-size: 0.8rem;
+            }
+
+            img
+            {
+                width: auto;
+                height: 32vh;
+            }
+
+            h3
+            {
+                font-size: 1rem;
+                margin: 0 0 20px 0;
+            }
+
+            p
+            {
+                margin: 0 0 10px 0;
+                text-align: left;
+                font-size: 0.9rem;
+            }
+
+            span
+            {
+                border: 1px solid rgba(255, 255, 255, 0.7);
+                display: inline-block;
+                padding: 5px 10px;
+                text-align: center;
+                font-size: 0.8rem;
+                white-space: nowrap;
+            }
+
+            .blog-block
+            {
+                width: 68%;
+                display: flex;
+                justify-content: space-between;
+                flex-wrap: wrap;
+
+                article
+                {
+                    margin: 0 0 3vh 0;
+                }
+
+                article:nth-of-type(1)
+                {
+                    width: 42%;
+                    animation-delay: 0.5s;
+
+                    img
+                    {
+                        height: 32vh;
+                    }
+                }
+
+                article:nth-of-type(2)
+                {
+                    width: 20%;
+                    animation-delay: 1.5s;
+                }
+
+                article:nth-of-type(3)
+                {
+                    width: 32%;
+                    animation-delay: 1s;
+                }
+
+                article:nth-of-type(4)
+                {
+                    width: 32%;
+                    animation-delay: .8s;
+                }
+
+                article:nth-of-type(5)
+                {
+                    width: 20%;
+                    animation-delay: 1.8s;
+                }
+
+                article:nth-of-type(6)
+                {
+                    width: 42%;
+                    animation-delay: 1.5s;
+                }
+            }
+        }
+    }
+
+}

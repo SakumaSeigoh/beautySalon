@@ -1,0 +1,25 @@
+
+@media screen and (max-width: 900px)
+{
+    #footer dl,
+    #footer .footer-list,
+    #footer small
+    {
+        width: 100% !important;
+        text-align: center !important;
+    }
+
+    #footer dl
+    {
+        margin: 40px 0;
+    }
+}
+
+
+@media screen and (max-width: 940px)
+{
+    #footer.inner
+    {
+        padding: 30px;
+    }
+}

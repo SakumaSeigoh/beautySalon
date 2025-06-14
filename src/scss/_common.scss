@@ -1,0 +1,240 @@
+h1,
+#g-nav-list li:nth-child(1),
+#menu h2,
+#blog h2,
+#footer dl dd,
+#splash-logo
+{
+    font-family: 'Parisienne', cursive;
+}
+
+#container,
+#footer
+{
+    /* #header-imgよりも配置を上にするためにrelativeをつける */
+    position: relative;
+    /* #header-imgよりもz-indexの値を大きな数値にして上に表示 */
+    z-index: 3;
+    background:#f8f9fa;
+}
+
+/* 全共通スライドイン */
+.slide-in
+{
+	overflow: hidden;
+    display: inline-block;
+    /* 英語がはみ出るので見えるように余白追記 */
+    padding: 0 10px;
+}
+
+.slide-in_inner
+{
+    display: inline-block;
+}
+
+.left-anime,
+.right-anime
+{
+    /* 事前に透過0にして消しておく */
+    opacity: 0;
+}
+
+.slide-anime-left-right
+{
+    animation-name: SlideTextMinus100;
+    animation-duration: 0.8s;
+    animation-fill-mode: forwards;
+    opacity: 0;
+}
+
+.slide-anime-right-left
+{
+	animation-name: SlideText100;
+	animation-duration: 0.8s;
+	animation-fill-mode: forwards;
+    opacity: 0;
+}
+
+.btn04
+{
+    position: relative;
+    display: inline-block;
+    padding: 10px 30px;
+    color: #333;
+    border: 1px solid #ccc;
+    text-decoration: none;
+    outline: none;
+    overflow: hidden;
+
+    &:hover
+    {
+        color:#fff;
+        border-color: transparent;
+        /* 色の変化を遅らせる */
+        transition-delay: .6s;
+    }
+
+    span
+    {
+        display: block;
+        z-index: 2;
+    }
+}
+
+.bordertop
+{
+    &:hover::before
+    {
+        height: 100%;
+        transition-delay: .4s;
+    }
+
+    &::before
+    {
+        content: '';
+        position: absolute;
+        left: 0;
+        top: 0;
+        z-index: -1;
+        width: 100%;
+        height: 0;
+        background: #e2a2b1;
+        transition: all .3s;
+    }
+
+    span::before
+    {
+        left: 0;
+        top: 0;
+    }
+
+    span::after
+    {
+        right: 0;
+        top: 0;
+    }
+
+    &:hover span::before,
+    &:hover span::after
+    {
+        height: 100%;
+    }
+
+    span::before,
+    span::after
+    {
+        content: '';
+        position: absolute;
+        width: 1px;
+        height: 0;
+        background: #e2a2b1;
+        transition: all .3s;
+    }
+}
+
+/* fade-upをするアイコンの動き */
+
+.fade-up
+{
+    animation-name: fadeUpAnime;
+    animation-duration: 0.5s;
+    animation-fill-mode: forwards;
+    opacity: 0;
+}
+
+/* テキストがほのかに光りながら出現 */
+
+.glow-anime span
+{
+    opacity: 0;
+}
+
+.glow-anime.glow span
+{
+    animation: GlowAnimeOn 1s ease-out forwards;
+}
+
+/* テキストがじわっと出現 */
+
+.blur-trigger
+{
+    opacity: 0;
+}
+
+.blur
+{
+    animation-name: blurAnime;
+    animation-duration: 1s;
+    animation-fill-mode: forwards;
+}
+
+.zoom-out-trigger
+{
+    opacity: 0;
+}
+
+.zoom-out
+{
+    animation-name: ZoomOutAnime;
+    animation-duration: 0.5s;
+    animation-fill-mode: forwards;
+}
+
+.fade-in
+{
+    animation-name: FadeInAnime;
+    animation-duration: 2s;
+    animation-fill-mode: forwards;
+    opacity: 0;
+}
+
+/* 背景が出現＋テキスト（上から） */
+
+.bg-du,
+.bg-du .mask
+{
+    display: block;
+    /* 背景色とテキストの基点となる位置を定義 */
+    position: relative;
+    overflow: hidden;
+}
+
+.bg-du .mask::before
+{
+    content: '';
+    position: absolute;
+    z-index: 2;
+    left: 0;
+    top: 0;
+    opacity: 0;
+    /* 移り変わる速さを変更したい場合はこの数値を変更 */
+    transition: .3s ease-in-out;
+    transform: translateY(100%);
+    background: #e2a2b2;
+    width: 100%;
+    height: 100%;
+}
+
+.bg-du:hover .mask::before
+{
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.bg-du .cap
+{
+	position: absolute;
+	opacity: 0;
+    /* 移り変わる速さを変更したい場合はこの数値を変更 */
+	transition: .5s ease-in-out;
+	z-index: 3;
+	top: 50%;
+    left: 50%;
+	transform: translate(-50%, -50%);
+	color: #fff;
+}
+
+.bg-du:hover .cap
+{
+    opacity: 1;
+}
